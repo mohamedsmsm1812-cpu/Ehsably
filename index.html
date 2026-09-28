@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>احسبلي - حاسبة النسبة</title>
+<style>
+body{font-family:Tahoma;background:#f5f7fb;margin:0;padding:20px}
+.box{max-width:450px;margin:30px auto;background:#fff;padding:25px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,.1)}
+h1{text-align:center;color:#2d6cdf}
+input{width:100%;padding:12px;margin:10px 0;border:1px solid #ddd;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{width:100%;padding:13px;background:#2d6cdf;color:#fff;border:none;border-radius:8px;font-size:18px}
+#result{margin-top:20px;padding:15px;background:#eef4ff;border-radius:8px;text-align:center;font-size:22px;font-weight:bold;display:none}
+</style>
+</head>
+<body>
+<div class="box">
+<h1>احسبلي %</h1>
+<p>احسب النسبة المئوية بسهولة</p>
+<label>الرقم</label>
+<input id="num" type="number" placeholder="200">
+<label>النسبة %</label>
+<input id="per" type="number" placeholder="15">
+<button onclick="calc()">احسب الآن</button>
+<div id="result"></div>
+</div>
+<script>
+function calc(){
+let n=parseFloat(document.getElementById('num').value);
+let p=parseFloat(document.getElementById('per').value);
+if(isNaN(n)||isNaN(p)){alert('اكتب الرقمين');return}
+let r=n*p/100;
+let el=document.getElementById('result');
+el.style.display='block';
+el.innerHTML=p+'% من '+n+' = <br>'+r;
+}
+</script>
+</body>
+</html>
